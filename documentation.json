@@ -35,7 +35,7 @@
     "components": [
         {
             "name": "App",
-            "id": "component-App-6175661d252a2a08ae8733de78a15b91d8529e139979d75a7aefa8264aec718c0b340acf3e68e86a3030dd57263ce07ffd2f328004887e75956470754d10033a",
+            "id": "component-App-0e078da57bcfa3981036826a29b4fff610c02591d6e42a1375aa33ad0c40c63d9e7dcc4e6a33c51d2576e61b1ed6c5352f30d67791af0b14146ac19d2854b2b5",
             "file": "src/app/app.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -62,7 +62,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
                     "modifierKind": [
                         124,
                         148
@@ -78,12 +78,16 @@
             "imports": [
                 {
                     "name": "RouterOutlet"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'app-root',\n  imports: [RouterOutlet],\n  templateUrl: './app.html',\n  styleUrl: './app.scss'\n})\nexport class App {\n  protected readonly title = signal('storybookdemo');\n}\n",
+            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { ButtonComponent } from \"../stories/button.component\";\n\n@Component({\n  selector: 'app-root',\n  imports: [RouterOutlet, ButtonComponent],\n  templateUrl: './app.html',\n  styleUrl: './app.scss'\n})\nexport class App {\n  protected readonly title = signal('storybookdemo');\n}\n",
             "styleUrl": "./app.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -207,7 +211,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #95dd19;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 30px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
+                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #95dd19;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 100px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 30px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n.storybook-button--new{\n  background-color: #ff3b30;\n  color: white;\n}\n",
                     "styleUrl": "./button.css"
                 }
             ],
