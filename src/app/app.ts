@@ -1,12 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonComponent } from "../stories/button.component";
+import { HeaderComponent } from "../stories/header.component";
+import { SidebarComponent } from "../stories/sidebar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ButtonComponent],
+  standalone: true,   // 👈 this is required!
+  imports: [RouterOutlet, HeaderComponent, SidebarComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']  // 👈 use styleUrls (plural)
 })
 export class App {
   protected readonly title = signal('storybookdemo');
