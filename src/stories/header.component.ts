@@ -1,7 +1,6 @@
-import { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RivePlayerComponent } from './rive-player.component';   
-import { ButtonComponent } from './button.component';
 import type { User } from './user';
 
 
@@ -10,7 +9,6 @@ import type { User } from './user';
 
   standalone: true,
   imports: [CommonModule,RivePlayerComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `<header class="storybook-header">
   <!-- Left Section -->
   <div class="left-box">
@@ -34,11 +32,18 @@ import type { User } from './user';
   <div class="welcome">Welcome</div>
   <div class="username-row">
     <span class="username">Manoj Kumar</span>
-    <span class="arrow">
+    <span class="arrow" (click)="toggleDropdown($event)">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
   <path d="M14.25 7.25L9 11.75L3.75 7.25" stroke="#71717A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
     </span>
+    <div class="dropdown-menu" *ngIf="isDropdownOpen">
+      <div class="dropdown-item" (click)="onEditProfile.emit()">Edit Profile</div>
+      <div class="dropdown-item" (click)="onEditWidget.emit()">Edit Widget</div>
+      <div class="dropdown-item" (click)="onSignOut.emit()">Sign Out</div>
+      <div class="dropdown-divider"></div>
+      <div class="dropdown-item" (click)="onPrivacyPolicy.emit()">Privacy Policy</div>
+    </div>
   </div>
 </div>
 
@@ -66,5 +71,29 @@ export class HeaderComponent {
   onLogout = new EventEmitter<Event>();
 
   @Output()
-  onCreateAccount = new EventEmitter<Event>();
+  onEditProfile = new EventEmitter<void>();
+
+  @Output()
+  onEditWidget = new EventEmitter<void>();
+
+  @Output()
+  onSignOut = new EventEmitter<void>();
+
+  @Output()
+  onPrivacyPolicy = new EventEmitter<void>();
+
+  isDropdownOpen = false;
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.username-row')) {
+      this.isDropdownOpen = false;
+    }
+  }
+
+  toggleDropdown(event: MouseEvent) {
+    event.stopPropagation(); // Prevent immediate closing
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
 }

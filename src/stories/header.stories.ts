@@ -15,7 +15,10 @@ const meta: Meta<HeaderComponent> = {
   args: {
     onLogin: fn(),
     onLogout: fn(),
-    onCreateAccount: fn(),
+    onEditProfile: fn(),
+    onEditWidget: fn(),
+    onSignOut: fn(),
+    onPrivacyPolicy: fn(),
   },
 };
 
