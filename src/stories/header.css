@@ -120,6 +120,7 @@ background: var(--colors-layout-divider, rgba(17, 17, 17, 0.10));
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .user-info {
