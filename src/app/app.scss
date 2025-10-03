@@ -1,0 +1,76 @@
+// App Container - uses Flexbox for dynamic layout
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Full viewport height
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; // Prevent any potential scrolling issues
+}
+
+// Header
+.app-header {
+  width: 100%;
+  z-index: 100; // Ensure header stays above other content
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-shrink: 0; // Prevent header from shrinking
+
+  &:not(:empty) {
+    display: flex;
+  }
+}
+
+// Content wrapper (sidebar + main)
+.app-content {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+// Sidebar
+.app-sidebar {
+  width: 250px; // Fixed sidebar width
+  background: #f8f9fa;
+  border-right: 1px solid #e9ecef;
+  overflow-y: auto; // Scrollable if content is too tall
+  flex-shrink: 0; // Prevent sidebar from shrinking
+}
+
+// Main content area
+.app-main {
+  flex: 1; // Take remaining space
+  padding: 24px;
+  background: #fff;
+  overflow-y: auto; // Scrollable if content is too tall
+  min-width: 0; // Prevent flex item from overflowing
+}
+
+// Make sure the body has no margin/padding
+:host {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+// Basic responsive adjustments
+@media (max-width: 768px) {
+  .app-content {
+    flex-direction: column;
+  }
+
+  .app-sidebar {
+    display: none; // Hide sidebar on mobile - you might want to add a toggle mechanism
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .app-main {
+    flex: 1;
+  }
+}

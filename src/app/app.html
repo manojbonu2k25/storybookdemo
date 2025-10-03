@@ -7,13 +7,25 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<header><storybook-header></storybook-header></header>
-<div class="layout">
-  <!-- Sidebar on the left -->
+<div class="app-container">
+  <!-- Header -->
+  <header class="app-header">
+    <storybook-header></storybook-header>
+  </header>
 
-<main class="main">
- <app-sidebar></app-sidebar>
-</main>
+  <div class="app-content">
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <app-sidebar></app-sidebar>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      <h1>Welcome to Your Angular App!</h1>
+      <router-outlet />
+    </main>
+  </div>
+</div>
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
