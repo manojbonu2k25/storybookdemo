@@ -65,13 +65,24 @@
   }
 
   .app-sidebar {
-    display: none; // Hide sidebar on mobile - you might want to add a toggle mechanism
-    width: 100%;
+    display: none;
+    position: fixed;
+    top: var(--header-height, 75px);
+    left: 0;
+    width: 240px;
+    height: calc(100vh - var(--header-height, 75px));
     border-right: none;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: none;
+    background: transparent;
+    z-index: 200;
+  }
+
+  .app-sidebar.is-open {
+    display: flex;
   }
 
   .app-main {
     flex: 1;
+    padding: 16px;
   }
 }

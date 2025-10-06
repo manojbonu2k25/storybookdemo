@@ -1,13 +1,13 @@
 <div class="app-container">
   <!-- Header -->
   <header class="app-header">
-    <storybook-header></storybook-header>
+    <storybook-header (onToggleSidebar)="toggleSidebar()"></storybook-header>
   </header>
 
   <div class="app-content">
     <!-- Sidebar -->
-    <aside class="app-sidebar">
-      <app-sidebar></app-sidebar>
+    <aside class="app-sidebar" [class.is-open]="sidebarExpanded()">
+      <app-sidebar [expanded]="sidebarExpanded()" (expandedChange)="setSidebarExpanded($event)"></app-sidebar>
     </aside>
 
     <!-- Main Content -->

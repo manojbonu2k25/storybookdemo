@@ -12,4 +12,19 @@ import { SidebarComponent } from "../stories/sidebar.component";
 })
 export class App {
   protected readonly title = signal('storybookdemo');
+  protected readonly sidebarExpanded = signal(false);
+
+  constructor() {
+    if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+      this.sidebarExpanded.set(true);
+    }
+  }
+
+  toggleSidebar(): void {
+    this.sidebarExpanded.update((value) => !value);
+  }
+
+  setSidebarExpanded(value: boolean): void {
+    this.sidebarExpanded.set(value);
+  }
 }

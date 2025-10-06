@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -85,6 +85,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SidebarComponent {
   @Input() expanded = false;
+  @Output() expandedChange = new EventEmitter<boolean>();
 
   @HostBinding('style.display') hostDisplay = 'block';
   @HostBinding('style.height') hostHeight = 'calc(100vh - var(--header-height, 64px))';
@@ -99,5 +100,6 @@ export class SidebarComponent {
 
   toggleSidebar() {
     this.expanded = !this.expanded;
+    this.expandedChange.emit(this.expanded);
   }
 }

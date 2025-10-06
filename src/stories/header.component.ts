@@ -13,6 +13,11 @@ import type { User } from './user';
 <header class="storybook-header">
   <!-- Left Section -->
   <div class="left-box">
+    <button type="button" class="mobile-menu-btn" aria-label="Toggle navigation" (click)="onToggleSidebar.emit()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="#0554EF" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
     <div class="logo">
       <img src="assets/Western.svg" alt="Western Logo" />
     </div>
@@ -33,11 +38,21 @@ import type { User } from './user';
         <div class="welcome">Welcome</div>
         <div class="username-row" [class.open]="isDropdownOpen">
           <span class="username">Manoj Kumar</span>
-          <span class="arrow" (click)="toggleDropdown($event)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+          <button
+            type="button"
+            class="profile-trigger"
+            aria-label="User menu"
+            [attr.aria-expanded]="isDropdownOpen"
+            (click)="toggleDropdown($event)"
+          >
+            <svg class="desktop-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
               <path d="M14.25 7.25L9 11.75L3.75 7.25" stroke="#71717A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </span>
+            <svg class="mobile-avatar" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="9" r="4.5" stroke="#0554EF" stroke-width="1.5"/>
+              <path d="M6.5 22.5C6.5 18.9101 9.41015 16 13 16H15C18.5899 16 21.5 18.9101 21.5 22.5" stroke="#0554EF" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
 
           <div *ngIf="isDropdownOpen" class="dropdown-menu">
             <div class="dropdown-header">
@@ -78,6 +93,9 @@ import type { User } from './user';
 export class HeaderComponent {
   @Input()
   user: User | null = null;
+
+  @Output()
+  onToggleSidebar = new EventEmitter<void>();
 
   @Output()
   onLogin = new EventEmitter<Event>();

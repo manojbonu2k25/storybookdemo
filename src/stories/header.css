@@ -23,12 +23,40 @@
   align-self: stretch;
   min-width: 0;
 }
+
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(5, 84, 239, 0.08);
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
 .right-box {
   display: flex;
   align-items: center;
   gap: var(--units-unit-11, 44px);
   flex: 0 1 auto;
   min-width: 0;
+}
+
+@media (max-width: 1150px) {
+  .left-box {
+    gap: var(--units-unit-6, 24px);
+  }
+
+  .right-box {
+    gap: var(--units-unit-6, 24px);
+  }
 }
 .right-side {
   display: flex;
@@ -83,26 +111,17 @@ aspect-ratio: 17/4;
 .username-row {
   position: relative;
   cursor: pointer;
-}
-
-.username-row {
   display: inline-flex;
   align-items: center;
-}
-
-.username-row.open {
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
-}
-
-.username-row.open .dropdown-menu {
-  align-self: flex-end;
+  gap: 0.5rem;
 }
 
 /* Dropdown container */
 
 .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
   min-width: 260px;
   display: flex;
   flex-direction: column;
@@ -117,7 +136,6 @@ aspect-ratio: 17/4;
               0 4px 6px -4px rgba(0, 0, 0, 0.10);
 
   z-index: 1000;
-  margin-top: 0.5rem;
 }
 
 /* Header (email + role) */
@@ -171,7 +189,7 @@ aspect-ratio: 17/4;
   padding-right: 4px;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 4px;
   flex: 1 0 0;
   margin-top: 10px;
 }
@@ -187,14 +205,29 @@ aspect-ratio: 17/4;
 .dropdown-footer a:hover {
   text-decoration: underline;
 }
-/* Arrow rotates when dropdown is open */
-.arrow {
+/* Profile trigger button */
+.profile-trigger {
   display: inline-flex;
-  transition: transform 0.2s;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
   cursor: pointer;
 }
 
-.username-row.open .arrow {
+.profile-trigger .mobile-avatar {
+  display: none;
+  width: 28px;
+  height: 28px;
+}
+
+.profile-trigger .desktop-arrow {
+  transition: transform 0.2s;
+}
+
+.username-row.open .profile-trigger .desktop-arrow {
   transform: rotate(180deg);
 }
 
@@ -245,36 +278,28 @@ aspect-ratio: 17/4;
 
 @media (max-width: 900px) {
   .storybook-header {
-    align-items: flex-start;
-    flex-wrap: wrap;
-    row-gap: var(--units-unit-4, 16px);
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: var(--units-unit-6, 24px);
   }
 
   .left-box {
-    flex: 1 1 100%;
-    order: 1;
+    flex: 0 1 auto;
   }
 
   .right-side {
-    flex: 1 1 100%;
-    order: 3;
-    margin-left: 0;
-    justify-content: flex-start;
-    gap: var(--units-unit-9, 36px);
-    flex-wrap: wrap;
+    flex: 1 1 auto;
+    margin-left: auto;
+    justify-content: flex-end;
+    gap: var(--units-unit-6, 24px);
   }
 
   .right-box {
-    order: 1;
-    flex: 1 1 auto;
-    justify-content: flex-start;
-    gap: var(--units-unit-9, 36px);
+    gap: var(--units-unit-6, 24px);
   }
 
   .axel-logo {
-    order: 2;
-    margin-left: 0;
-    justify-content: flex-start;
+    display: none;
   }
 
   .user-info {
@@ -282,26 +307,21 @@ aspect-ratio: 17/4;
   }
 }
 
-
 .user-info .username-row {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;           /* spacing between name & arrow */
+  gap: 0.5rem;
   position: relative;
-}
-
-.user-info .username-row.open {
-  align-items: flex-end;
 }
 
 .user-info .username {
   font-weight: 400;   /* regular (not bold) */
 }
 
-.user-info .arrow svg {
+.user-info .profile-trigger .desktop-arrow {
   width: 18px;
-height: 18px;
-aspect-ratio: 1/1;/* gray arrow */
+  height: 18px;
+  aspect-ratio: 1/1;
 }
 /* Base header stays the same */
 
@@ -309,35 +329,111 @@ aspect-ratio: 1/1;/* gray arrow */
 /* Tablet responsiveness */
 @media (max-width: 1024px) {
   .storybook-header {
-    flex-direction: column;   /* stack items vertically */
-    align-items: flex-start;  /* align to left */
-    gap: 1rem;
-    height: auto;
+    height: var(--header-height);
     min-height: var(--header-height);
+    gap: var(--units-unit-6, 24px);
   }
 
+  .left-box,
+  .right-side {
+    flex: 1 1 auto;
+  }
 
+  .right-side {
+    gap: var(--units-unit-6, 24px);
+  }
 }
 
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-  .logo img {
-    width: 100px;  /* shrink logo */
-    height: auto;
+@media (max-width: 768px) {
+  .storybook-header {
+    position: relative;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 
-  .report-title {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+  .mobile-menu-btn {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(5, 84, 239, 0.08);
+    position: absolute;
+    left: var(--units-unit-4, 16px);
+    top: 50%;
+    transform: translateY(-50%);
   }
 
-  .rivicons app-rive-player {
-    width: 28px;
-    height: 28px;
+  .left-box {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    margin: 0;
+    position: static;
+    transform: none;
+  }
+
+  .divider,
+  .report-title,
+  .rivicons,
+  .axel-logo {
+    display: none;
+  }
+
+  .right-side {
+    position: absolute;
+    right: var(--units-unit-4, 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .right-box {
+    display: flex;
+    align-items: center;
+    gap: 0;
   }
 
   .user-info {
-    font-size: 0.75rem;
-    line-height: 1.125rem;
+    margin-right: 0;
+  }
+
+  .user-info .welcome,
+  .user-info .username {
+    display: none;
+  }
+
+  .user-info .username-row {
+    gap: 0;
+  }
+
+  .profile-trigger {
+    background: rgba(5, 84, 239, 0.08);
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+  }
+
+  .profile-trigger .desktop-arrow {
+    display: none;
+  }
+
+  .profile-trigger .mobile-avatar {
+    display: inline;
+  }
+
+  .dropdown-menu {
+    min-width: unset;
+    width: min(260px, 90vw);
+    right: 0;
+    left: auto;
+    margin-top: 0.5rem;
   }
 }
