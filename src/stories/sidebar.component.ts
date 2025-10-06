@@ -57,6 +57,14 @@ import { CommonModule } from '@angular/common';
 </svg>
       <span *ngIf="expanded" class="ask-label">Utilities</span>
     </div>
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5"/>
+        <path d="M12 16.5V16.6" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M9.75 9.5C9.75 8.11875 10.8687 7 12.25 7C13.6313 7 14.75 8.11875 14.75 9.5C14.75 10.4562 14.2188 11.2875 13.4563 11.75C12.7688 12.1688 12.25 12.75 12.25 13.5V14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span *ngIf="expanded" class="ask-label">Help</span>
+    </div>
   
     </nav>
   </div>
@@ -84,7 +92,7 @@ export class SidebarComponent {
     return this.expanded ? 220 : 72;
   }
   @HostBinding('style.minWidth.px') hostMinWidth = 72;
-  @HostBinding('style.transition') hostTransition = 'width 0.3s ease';
+  @HostBinding('style.transition') hostTransition = 'width 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
   @HostBinding('class.expanded') get hostExpanded(): boolean {
     return this.expanded;
   }

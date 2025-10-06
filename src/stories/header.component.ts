@@ -24,8 +24,8 @@ import type { User } from './user';
   <div class="right-side">
     <div class="right-box">
       <div class="rivicons">
+        <app-rive-player src="assets/bell.riv"></app-rive-player>
         <app-rive-player src="assets/vpn.riv"></app-rive-player>
-        <app-rive-player src="assets/print.riv"></app-rive-player>
         <app-rive-player src="assets/settings.riv"></app-rive-player>
       </div>
 

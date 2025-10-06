@@ -37,13 +37,10 @@
 .sidebar-top {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
-}
-
-.sidebar.expanded .sidebar-top {
+  justify-content: flex-start;
   align-items: flex-start;
+  gap: var(--units-unit-4, 16px);
+  width: 100%;
 }
 
 /* ===========================
@@ -56,7 +53,7 @@
   padding: 8px;
   justify-content: center;
   align-items: center;
-  gap: var(--units-unit-6, 24px);
+  gap: 0;
   border-radius: 12px;
   background: radial-gradient(
     111.84% 132.86% at 59.99% 103.12%,
@@ -108,13 +105,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--units-unit-3, 12px);
-  margin-top: 0;
+  justify-content: center;
+  gap: var(--units-unit-4, 16px);
+  margin: var(--units-unit-4, 16px) 0;
   width: 100%;
+  flex: 1 1 auto;
 }
 
 .sidebar.expanded .menu {
   align-items: flex-start;
+  justify-content: center;
 }
 
 /* ===========================
@@ -123,7 +123,7 @@
 .menu-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--units-unit-6, 24px);
   font-size: 14px;
   color: #fff;
   cursor: pointer;
@@ -142,26 +142,22 @@
   width: 24px;
   height: 24px;
   aspect-ratio: 1 / 1;
+  flex: 0 0 24px;
   transition: all 0.25s ease;
 }
-
 .sidebar.expanded .menu-item svg {
   width: 18px;
   height: 18px;
   aspect-ratio: 1 / 1;
+  flex: 0 0 18px;
 }
 
 /* Text Label Visibility */
 .menu-item span {
-  opacity: 0;
-  visibility: hidden;
+  flex: 1 1 auto;
+  color: #fff;
+  font-size: 14px;
   white-space: nowrap;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.sidebar.expanded .menu-item span {
-  opacity: 1;
-  visibility: visible;
 }
 
 /* ===========================
