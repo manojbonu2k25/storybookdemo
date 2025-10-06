@@ -17,12 +17,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 0;
   padding: 0;
-  display: flex;
   flex-shrink: 0; // Prevent header from shrinking
+}
 
-  &:not(:empty) {
-    display: flex;
-  }
+.app-header storybook-header {
+  display: block;
+  width: 100%;
 }
 
 // Content wrapper (sidebar + main)

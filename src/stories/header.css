@@ -2,7 +2,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 4.6875rem;
+  flex-wrap: nowrap;
+  row-gap: 0;
+  column-gap: 0;
+  min-height: 4.6875rem;
   padding: var(--units-unit-1, 4px) var(--units-unit-8, 32px);
   margin: 0;
   background: var(--colors-layout-background---white, #FFF);
@@ -14,14 +17,20 @@
   display: flex;
   align-items: center;
   gap: var(--units-unit-9, 36px);
-  flex: 0 0 auto;
+  flex: 0 1 auto;
 }
 .right-box {
   display: flex;
   align-items: center;
+  gap: var(--units-unit-9, 36px);
+  flex: 0 1 auto;
+}
+.right-side {
+  display: flex;
+  align-items: center;
   gap: var(--units-unit-11, 44px);
   margin-left: auto;
-  height: 100%;
+  flex: 0 1 auto;
 }
 .logo {
 display: flex;
@@ -61,23 +70,61 @@ background: var(--colors-layout-divider, rgba(17, 17, 17, 0.10));
   cursor: pointer;
 }
 
+/* Dropdown container */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   right: 0;
-  min-width: 200px;
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  padding: var(--units-unit-3_5, 14px);
+  border-radius: var(--layout-radius-rounded-medium, 12px);
+  background: var(--colors-layout-background-white, #FFF);
+
+  /* subtle card shadow */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10),
+              0 4px 6px -4px rgba(0, 0, 0, 0.10);
+
   z-index: 1000;
   margin-top: 8px;
 }
 
-.dropdown-item {
-  padding: 0.75rem 1rem;
+/* Header (email + role) */
+.dropdown-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 0 4px;
+}
+
+.dropdown-header .email {
+  font-weight: 700;
   color: #18181B;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
+}
+
+.dropdown-header .role {
+  font-size: 0.85rem;
+  color: #71717A;
+}
+
+/* Divider line */
+.dropdown-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  border: none;
+}
+
+/* Main clickable items */
+.dropdown-item {
+  padding: 6px 4px;
+  color: #18181B;
+  font-size: 0.9rem;
   line-height: 1.25rem;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -85,14 +132,27 @@ background: var(--colors-layout-divider, rgba(17, 17, 17, 0.10));
 
 .dropdown-item:hover {
   background-color: #F4F4F5;
+  border-radius: 6px;
 }
 
-.dropdown-divider {
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin: 4px 0;
+/* Footer links (Sign Out / Privacy Policy) */
+.dropdown-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
+.dropdown-footer a {
+  color: #2563EB; /* blue link */
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-footer a:hover {
+  text-decoration: underline;
+}
 /* Arrow rotates when dropdown is open */
 .arrow {
   display: inline-flex;
@@ -100,7 +160,7 @@ background: var(--colors-layout-divider, rgba(17, 17, 17, 0.10));
   cursor: pointer;
 }
 
-.username-row:has(.dropdown-menu) .arrow {
+.username-row.open .arrow {
   transform: rotate(180deg);
 }
 
@@ -124,10 +184,10 @@ background: var(--colors-layout-divider, rgba(17, 17, 17, 0.10));
 }
 
 .user-info {
-  margin-right: var(--units-unit-8, 32px);
+  margin-right: 0;
 }
 .axel-logo {
-  margin-left: auto;
+  margin-left: 0;
   width: 200px;
   height: 14px;
   display: flex;
@@ -145,6 +205,45 @@ background: var(--colors-layout-divider, rgba(17, 17, 17, 0.10));
 
 .user-info .welcome {
   font-weight: 700;   /* bold */
+}
+
+@media (max-width: 900px) {
+  .storybook-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    row-gap: var(--units-unit-4, 16px);
+  }
+
+  .left-box {
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  .right-side {
+    flex: 1 1 100%;
+    order: 3;
+    margin-left: 0;
+    justify-content: flex-start;
+    gap: var(--units-unit-9, 36px);
+    flex-wrap: wrap;
+  }
+
+  .right-box {
+    order: 1;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    gap: var(--units-unit-9, 36px);
+  }
+
+  .axel-logo {
+    order: 2;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .user-info {
+    margin-right: 0;
+  }
 }
 
 .user-info .username-row {
