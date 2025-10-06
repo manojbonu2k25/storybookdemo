@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -76,7 +76,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./sidebar.css']
 })
 export class SidebarComponent {
-  expanded = false;
+  @Input() expanded = false;
+
+  @HostBinding('style.display') hostDisplay = 'block';
+  @HostBinding('style.height') hostHeight = 'calc(100vh - var(--header-height, 64px))';
+  @HostBinding('style.width.px') get hostWidth(): number {
+    return this.expanded ? 220 : 72;
+  }
+  @HostBinding('style.minWidth.px') hostMinWidth = 72;
+  @HostBinding('style.transition') hostTransition = 'width 0.3s ease';
+  @HostBinding('class.expanded') get hostExpanded(): boolean {
+    return this.expanded;
+  }
 
   toggleSidebar() {
     this.expanded = !this.expanded;

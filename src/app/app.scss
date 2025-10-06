@@ -34,11 +34,12 @@
 
 // Sidebar
 .app-sidebar {
-  width: 250px; // Fixed sidebar width
-  background: #f8f9fa;
-  border-right: 1px solid #e9ecef;
-  overflow-y: auto; // Scrollable if content is too tall
-  flex-shrink: 0; // Prevent sidebar from shrinking
+  display: flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+  background: transparent;
+  border-right: none;
+  overflow: visible;
 }
 
 // Main content area

@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ButtonComponent } from "../stories/button.component";
 import { HeaderComponent } from "../stories/header.component";
 import { SidebarComponent } from "../stories/sidebar.component";
 
