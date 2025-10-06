@@ -46,7 +46,7 @@
 .app-main {
   flex: 1; // Take remaining space
   padding: 24px;
-  background: #fff;
+  background: var(--Primary, #0554EF);
   overflow-y: auto; // Scrollable if content is too tall
   min-width: 0; // Prevent flex item from overflowing
 }

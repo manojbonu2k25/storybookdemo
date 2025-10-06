@@ -6,6 +6,7 @@
   flex-wrap: nowrap;
   row-gap: 0;
   column-gap: 0;
+  height: var(--header-height);
   min-height: var(--header-height);
   padding: var(--units-unit-1, 4px) var(--units-unit-8, 32px);
   margin: 0;
@@ -52,7 +53,7 @@ aspect-ratio: 17/4;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 2rem;
+  line-height: 2.25rem;
 }
 
 .divider {
@@ -116,10 +117,12 @@ aspect-ratio: 17/4;
   font-weight: 700;
   color: #18181B;
   font-size: 0.95rem;
+  line-height: 1.425rem;
 }
 
 .dropdown-header .role {
   font-size: 0.85rem;
+  line-height: 1.275rem;
   color: #71717A;
 }
 
@@ -136,7 +139,7 @@ aspect-ratio: 17/4;
   padding: 6px 4px;
   color: #18181B;
   font-size: 0.9rem;
-  line-height: 1.25rem;
+  line-height: 1.35rem;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -149,14 +152,18 @@ aspect-ratio: 17/4;
 /* Footer links (Sign Out / Privacy Policy) */
 .dropdown-footer {
   display: flex;
-  justify-content: space-between;
+  padding-right: 4px;
+  justify-content: center;
   align-items: center;
+  gap: 60px;
+  flex: 1 0 0;
   margin-top: 10px;
 }
 
 .dropdown-footer a {
   color: #2563EB; /* blue link */
   font-size: 0.9rem;
+  line-height: 1.35rem;
   text-decoration: none;
   font-weight: 500;
 }
@@ -213,7 +220,7 @@ aspect-ratio: 17/4;
   font-family: 'Roboto', sans-serif;
   font-size: 0.875rem;
   font-style: normal;
-  line-height: 1.25rem;
+  line-height: 1.3125rem;
 }
 
 .user-info .welcome {
@@ -286,7 +293,7 @@ aspect-ratio: 1/1;/* gray arrow */
   .storybook-header {
     flex-direction: column;   /* stack items vertically */
     align-items: flex-start;  /* align to left */
-    gap: 16px;
+    gap: 1rem;
   }
 
 
@@ -300,8 +307,8 @@ aspect-ratio: 1/1;/* gray arrow */
   }
 
   .report-title {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
   }
 
   .rivicons app-rive-player {
@@ -310,7 +317,7 @@ aspect-ratio: 1/1;/* gray arrow */
   }
 
   .user-info {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
   }
 }
