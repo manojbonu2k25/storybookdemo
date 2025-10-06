@@ -21,12 +21,14 @@
   gap: var(--units-unit-9, 36px);
   flex: 0 1 auto;
   align-self: stretch;
+  min-width: 0;
 }
 .right-box {
   display: flex;
   align-items: center;
   gap: var(--units-unit-11, 44px);
   flex: 0 1 auto;
+  min-width: 0;
 }
 .right-side {
   display: flex;
@@ -34,6 +36,7 @@
   gap: var(--units-unit-11, 44px);
   margin-left: auto;
   flex: 0 1 auto;
+  min-width: 0;
 }
 .logo {
 display: flex;
@@ -294,6 +297,8 @@ aspect-ratio: 1/1;/* gray arrow */
     flex-direction: column;   /* stack items vertically */
     align-items: flex-start;  /* align to left */
     gap: 1rem;
+    height: auto;
+    min-height: var(--header-height);
   }
 
 
