@@ -183,6 +183,10 @@ aspect-ratio: 17/4;
 
 .dropdown-divider.mobile-only {
   display: none;
+    height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  border: none;
 }
 
 /* Main clickable items */
@@ -457,13 +461,10 @@ aspect-ratio: 17/4;
 
   .dropdown-menu {
     min-width: unset;
-    width: min(260px, 90vw);
     right: 0;
     left: auto;
     margin-top: 0.5rem;
   }
 
-  .dropdown-divider.mobile-only {
-    display: block;
-  }
+
 }
