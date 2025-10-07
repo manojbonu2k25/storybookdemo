@@ -181,6 +181,10 @@ aspect-ratio: 17/4;
   border: none;
 }
 
+.dropdown-divider.mobile-only {
+  display: none;
+}
+
 /* Main clickable items */
 .dropdown-item {
   padding: 6px 4px;
@@ -202,7 +206,7 @@ aspect-ratio: 17/4;
   padding-right: 4px;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 35px;
   flex: 1 0 0;
   margin-top: 10px;
 }
@@ -457,5 +461,9 @@ aspect-ratio: 17/4;
     right: 0;
     left: auto;
     margin-top: 0.5rem;
+  }
+
+  .dropdown-divider.mobile-only {
+    display: block;
   }
 }

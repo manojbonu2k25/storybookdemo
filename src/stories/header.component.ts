@@ -60,6 +60,7 @@ import type { User } from './user';
               <app-rive-player src="assets/vpn.riv"></app-rive-player>
               <app-rive-player src="assets/settings.riv"></app-rive-player>
             </div>
+            <div class="dropdown-divider mobile-only"></div>
             <div class="dropdown-header">
               <div class="email">manoj.bonu@axelautomotive.com</div>
               <div class="role">Super Admin</div>
