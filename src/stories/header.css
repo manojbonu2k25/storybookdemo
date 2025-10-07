@@ -220,15 +220,16 @@ aspect-ratio: 17/4;
 }
 /* Profile trigger button */
 .profile-trigger {
-  display: flex;
-  width: 42px;
-  height: 42px;
-  flex-direction: column;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: 12px;
-  background: rgba(5, 84, 239, 0.08);
+  background: none;
+  appearance: none;
+  border-radius: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
   cursor: pointer;
 }
 
