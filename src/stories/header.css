@@ -385,7 +385,7 @@ aspect-ratio: 17/4;
     background: none;
     position: absolute;
     left: var(--units-unit-3, 12px);
-    top: 50%;
+    top: 41%;
     transform: translateY(-50%);
   }
 
