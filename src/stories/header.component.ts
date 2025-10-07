@@ -14,8 +14,11 @@ import type { User } from './user';
   <!-- Left Section -->
   <div class="left-box">
     <button type="button" class="mobile-menu-btn" aria-label="Toggle navigation" (click)="onToggleSidebar.emit()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M4 6h16M4 12h16M4 18h16" stroke="#0554EF" stroke-width="1.8" stroke-linecap="round"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 43" fill="none">
+        <path d="M0 8.5C0 4.08172 3.58172 0.5 8 0.5H34C38.4183 0.5 42 4.08172 42 8.5V34.5C42 38.9183 38.4183 42.5 34 42.5H8C3.58172 42.5 0 38.9183 0 34.5V8.5Z" fill="#F3F6FF"/>
+        <path d="M26.25 12.75H10.5" stroke="#0554EF" stroke-width="2" stroke-linecap="round"/>
+        <path d="M31.5 21.5H10.5" stroke="#0554EF" stroke-width="2" stroke-linecap="round"/>
+        <path d="M22.75 30.25H10.5" stroke="#0554EF" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </button>
     <div class="logo">
@@ -48,13 +51,15 @@ import type { User } from './user';
             <svg class="desktop-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
               <path d="M14.25 7.25L9 11.75L3.75 7.25" stroke="#71717A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <svg class="mobile-avatar" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <circle cx="14" cy="9" r="4.5" stroke="#0554EF" stroke-width="1.5"/>
-              <path d="M6.5 22.5C6.5 18.9101 9.41015 16 13 16H15C18.5899 16 21.5 18.9101 21.5 22.5" stroke="#0554EF" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+            <img class="mobile-avatar" src="assets/User Rounded.svg" alt="Profile" />
           </button>
 
           <div *ngIf="isDropdownOpen" class="dropdown-menu">
+            <div class="dropdown-rivicons">
+              <app-rive-player src="assets/bell.riv"></app-rive-player>
+              <app-rive-player src="assets/vpn.riv"></app-rive-player>
+              <app-rive-player src="assets/settings.riv"></app-rive-player>
+            </div>
             <div class="dropdown-header">
               <div class="email">manoj.bonu@axelautomotive.com</div>
               <div class="role">Super Admin</div>
