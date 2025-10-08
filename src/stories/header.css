@@ -118,7 +118,7 @@ aspect-ratio: 17/4;
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 18px);
   right: 0;
   min-width: 260px;
   display: flex;
@@ -252,12 +252,12 @@ aspect-ratio: 17/4;
 .rivicons {
   display: flex;
   align-items: center;
-  gap:var(--units-unit-3, 12px);
+  gap:var(--units-unit-1, 4px);
 }
 
 .rivicons app-rive-player {
-  width: 44px;
-  height: 24px;
+  width: 42px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -358,9 +358,9 @@ aspect-ratio: 17/4;
 
 @media (max-width: 700px) {
   .storybook-header {
-    position: relative;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-between;
     padding: var(--units-unit-1, 4px) var(--units-unit-3, 12px);
   }
 
@@ -371,23 +371,24 @@ aspect-ratio: 17/4;
     border-radius: 12px;
     border: none;
     background: none;
-    position: absolute;
-    left: var(--units-unit-3, 12px);
-    top: 41%;
-    transform: translateY(-50%);
+    justify-self: start;
   }
 
   .left-box {
-    position: relative;
-    width: 100%;
-    justify-content: center;
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
+    justify-items: center;
+    gap: var(--units-unit-3, 12px);
+    width: 100%;
   }
 
   .logo {
     margin: 0;
     position: static;
     transform: none;
+    justify-self: center;
   }
 
   .divider,
@@ -398,13 +399,11 @@ aspect-ratio: 17/4;
   }
 
   .right-side {
-    position: absolute;
-    right: var(--units-unit-4, 16px);
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: auto;
     width: auto;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
   }
 
   .right-box {
@@ -433,6 +432,7 @@ aspect-ratio: 17/4;
     border-radius: 12px;
     border: none;
     margin-right: var(--units-unit-3, 12px);
+    margin-top: var(--units-unit-1, 4px);
   }
 
   .profile-trigger .desktop-arrow {

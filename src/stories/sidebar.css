@@ -67,10 +67,10 @@
 .sidebar.expanded .logo-box {
   display: flex;
   width: 100%;
-  padding: 8px 16px;
+  padding: 8px 10px;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--units-unit-4, 16px);
+  gap: var(--units-unit-6, 24px);
   align-self: stretch;
   border-radius: 12px;
   background: radial-gradient(
