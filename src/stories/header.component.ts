@@ -25,7 +25,7 @@ import type { User } from './user';
       <img src="assets/Western.svg" alt="Western Logo" />
     </div>
     <div class="divider"></div>
-    <h1 class="report-title">DASHBOARD</h1>
+    <h1 class="report-title large-text">DASHBOARD</h1>
   </div>
 
   <!-- Right Section -->
@@ -37,7 +37,7 @@ import type { User } from './user';
         <app-rive-player src="assets/settings.riv"></app-rive-player>
       </div>
 
-      <div class="user-info">
+      <div class="user-info small-text">
         <div class="welcome">Welcome</div>
         <div class="username-row" [class.open]="isDropdownOpen">
           <span class="username">Manoj Kumar</span>
@@ -62,18 +62,18 @@ import type { User } from './user';
             </div>
             <div class="dropdown-divider mobile-only"></div>
             <div class="dropdown-header">
-              <div class="email">manoj.bonu@axelautomotive.com</div>
-              <div class="role">Super Admin</div>
+              <div class="email medium-text">manoj.bonu@axelautomotive.com</div>
+              <div class="role caption-text">Super Admin</div>
             </div>
 
             <div class="dropdown-divider"></div>
 
-            <div class="dropdown-item">Edit Profile</div>
-            <div class="dropdown-item">Edit Widgets</div>
+            <div class="dropdown-item body-text">Edit Profile</div>
+            <div class="dropdown-item body-text">Edit Widgets</div>
 
             <div class="dropdown-footer">
-              <a href="#">Sign Out</a>
-              <a href="#">Privacy Policy</a>
+              <a href="#" class="body-text">Sign Out</a>
+              <a href="#" class="body-text">Privacy Policy</a>
             </div>
           </div>
         </div>

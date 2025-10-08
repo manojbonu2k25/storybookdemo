@@ -16,3 +16,69 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+
+:root {
+  /* Layout */
+  --header-height: 75px;
+
+  /* Spacing scale */
+  --units-unit-1: 4px;
+  --units-unit-3: 12px;
+  --units-unit-3_5: 14px;
+  --units-unit-4: 16px;
+  --units-unit-6: 24px;
+  --units-unit-8: 32px;
+  --units-unit-9: 36px;
+  --units-unit-11: 44px;
+  --units-unit-13: 52px;
+
+  /* Radii */
+  --layout-radius-rounded-medium: 12px;
+
+  /* Colors */
+  --Primary: #0554EF;
+  --colors-base-primary: #0554EF;
+  --colors-base-primary-foreground: #FFFFFF;
+  --colors-common-black: #000000;
+  --colors-common-purple-500: #8937E2;
+  --colors-content-content1-foreground: #18181B;
+  --colors-layout-background---white: #FFFFFF;
+  --colors-layout-background-white: #FFFFFF;
+  --colors-layout-divider: rgba(17, 17, 17, 0.10);
+}
+
+/* Shared typography helpers */
+.large-text {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+.medium-text {
+  font-size: 0.95rem;
+  line-height: 1.425rem;
+}
+
+.base-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.body-text {
+  font-size: 0.9rem;
+  line-height: 1.35rem;
+}
+
+.small-text {
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+}
+
+.caption-text {
+  font-size: 0.85rem;
+  line-height: 1.275rem;
+}
+
+.menu-text {
+  font-size: 0.875rem;
+  line-height: normal;
+}

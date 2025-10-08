@@ -112,10 +112,8 @@
 .logo-box .ask-label {
   color: var(--colors-base-primary-foreground, #FFF);
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
 }
 
 .logo-box .ask-label.visible {
@@ -148,7 +146,6 @@
   display: flex;
   align-items: center;
   gap: var(--units-unit-6, 24px);
-  font-size: 14px;
   color: #fff;
   cursor: pointer;
   border-radius: 8px;
@@ -179,7 +176,6 @@
 /* Text Label Visibility */
 .menu-item .ask-label {
   flex: 1 1 auto;
-  font-size: 14px;
 }
 
 /* ===========================
@@ -203,7 +199,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 4px;
   border-radius: 50%;
   transition: background-color 0.3s ease;
   margin-top: auto;

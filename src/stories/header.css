@@ -81,10 +81,8 @@ aspect-ratio: 17/4;
   color: var(--colors-content-content1-foreground, #18181B);
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 2.25rem;
 }
 
 .divider {
@@ -163,13 +161,9 @@ aspect-ratio: 17/4;
 .dropdown-header .email {
   font-weight: 700;
   color: #18181B;
-  font-size: 0.95rem;
-  line-height: 1.425rem;
 }
 
 .dropdown-header .role {
-  font-size: 0.85rem;
-  line-height: 1.275rem;
   color: #71717A;
 }
 
@@ -193,8 +187,6 @@ aspect-ratio: 17/4;
 .dropdown-item {
   padding: 6px 4px;
   color: #18181B;
-  font-size: 0.9rem;
-  line-height: 1.35rem;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -217,8 +209,6 @@ aspect-ratio: 17/4;
 
 .dropdown-footer a {
   color: #2563EB; /* blue link */
-  font-size: 0.9rem;
-  line-height: 1.35rem;
   text-decoration: none;
   font-weight: 500;
 }
@@ -262,7 +252,7 @@ aspect-ratio: 17/4;
 .rivicons {
   display: flex;
   align-items: center;
-  gap: var(--units-unit-6, 24px);
+  gap:var(--units-unit-3, 12px);
 }
 
 .rivicons app-rive-player {
@@ -291,9 +281,7 @@ aspect-ratio: 17/4;
   color: var(--colors-content-content1-foreground, #18181B);
   text-align: left;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.875rem;
   font-style: normal;
-  line-height: 1.3125rem;
 }
 
 .user-info .welcome {
