@@ -90,7 +90,7 @@ export class SidebarComponent {
   @HostBinding('style.display') hostDisplay = 'block';
   @HostBinding('style.height') hostHeight = 'calc(100vh - var(--header-height, 64px))';
   @HostBinding('style.width.px') get hostWidth(): number {
-    return this.expanded ? 200 : 72;
+    return this.expanded ? 190 : 72;
   }
   @HostBinding('style.minWidth.px') hostMinWidth = 72;
   @HostBinding('style.transition') hostTransition = 'width 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
