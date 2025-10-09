@@ -284,10 +284,6 @@ aspect-ratio: 17/4;
   font-style: normal;
 }
 
-.user-info .welcome {
-  font-weight: 700;   /* bold */
-}
-
 @media (max-width: 900px) {
   .storybook-header {
     align-items: center;
@@ -326,7 +322,7 @@ aspect-ratio: 17/4;
   position: relative;
 }
 
-.user-info .username {
+.user-info .username-row .text-small {
   font-weight: 400;   /* regular (not bold) */
 }
 
@@ -417,7 +413,7 @@ aspect-ratio: 17/4;
   }
 
   .user-info .welcome,
-  .user-info .username {
+  .user-info .username-row .text-small {
     display: none;
   }
 
