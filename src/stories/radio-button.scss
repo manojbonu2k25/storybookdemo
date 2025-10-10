@@ -1,0 +1,60 @@
+.radio-button {
+  display: inline-flex;
+  align-items: center;
+  padding-left: var(--units-unit-2, 8px);
+  gap: 8px;
+  cursor: pointer;
+
+  /* Cross-browser selection handling */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Outer Circle (default state) */
+  .outer {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--colors-base-primary-200, #8DB4FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  /* Inner Circle (checked state) */
+  .inner {
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    background: var(--colors-base-primary, #0554EF);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  /* Checked state styling */
+  &.checked .outer {
+    border-color: var(--colors-base-primary, #0554EF);
+  }
+
+  &.checked .inner {
+    opacity: 1;
+  }
+
+  /* Label text */
+  span {
+    color: var(--colors-layout-foreground, #11181C);
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+  }
+}

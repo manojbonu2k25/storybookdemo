@@ -1,0 +1,44 @@
+.chip {
+  display: inline-flex;
+  height: 28px;
+  min-height: 28px;
+  max-height: 28px;
+  padding: 0 var(--units-unit-3, 12px);
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--colors-base-primary, #0554EF);
+  color: var(--colors-base-primary-foreground, #FFF);
+
+  /* text-small */
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+
+  cursor: default;
+  transition: all 0.2s ease;
+
+  &.removable {
+    padding-right: var(--units-unit-2_5, 10px);
+  }
+
+  button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    margin-left: var(--units-unit-2, 8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
