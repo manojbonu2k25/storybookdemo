@@ -173,7 +173,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-6446536514d7c0f5891e3e6caf3d7c0a435aae9158c35ad2b660e93c90f3fcd858e151fc5edcc4d8926e365e78e8ad6d7874048a0282d6bbcf6039db227911bc",
+            "id": "component-ButtonComponent-5325be1f03ce575a6c617bb6dbf6734c09bd60c51e23cf35a7da68052ca07b11408a8fce5f1d83785d3447eccd76909bdb65b83fc77a96cea000f6f710d83cbb",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -185,7 +185,7 @@
                 "./button.scss"
             ],
             "styles": [],
-            "template": "<button class=\"button\" [ngClass]=\"type\">  <ng-container [ngSwitch]=\"type\">\n    <ng-container *ngSwitchCase=\"'add'\">\n      <span>{{ label }}</span>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"21\" height=\"21\" viewBox=\"0 0 21 21\" fill=\"none\">\n        <circle cx=\"10.4993\" cy=\"10.4163\" r=\"8.33333\" stroke=\"white\" stroke-width=\"1.5\" />\n        <path d=\"M13 10.4165L10.5 10.4165M10.5 10.4165L8 10.4165M10.5 10.4165L10.5 7.9165M10.5 10.4165L10.5 12.9165\"\n          stroke=\"white\" stroke-width=\"1.5\" stroke-linecap=\"round\" />\n      </svg>\n    </ng-container>\n\n    <ng-container *ngSwitchDefault>\n      <span>{{ label }}</span>\n    </ng-container>\n  </ng-container>\n</button>",
+            "template": "<button class=\"button\" [ngClass]=\"[type, size]\">  <ng-container [ngSwitch]=\"type\">\n    <ng-container *ngSwitchCase=\"'withIcon'\">\n      <span>{{ label }}</span>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"21\" height=\"21\" viewBox=\"0 0 21 21\" fill=\"none\">\n        <circle cx=\"10.4993\" cy=\"10.4163\" r=\"8.33333\" stroke=\"white\" stroke-width=\"1.5\" />\n        <path d=\"M13 10.4165L10.5 10.4165M10.5 10.4165L8 10.4165M10.5 10.4165L10.5 7.9165M10.5 10.4165L10.5 12.9165\"\n          stroke=\"white\" stroke-width=\"1.5\" stroke-linecap=\"round\" />\n      </svg>\n    </ng-container>\n\n    <ng-container *ngSwitchDefault>\n      <span>{{ label }}</span>\n    </ng-container>\n  </ng-container>\n</button>",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -200,12 +200,21 @@
                     "decorators": []
                 },
                 {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                },
+                {
                     "name": "type",
-                    "defaultValue": "'update'",
+                    "defaultValue": "'solid'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 28,
-                    "type": "\"cancel\" | \"update\" | \"add\"",
+                    "type": "\"light\" | \"solid\" | \"withIcon\"",
                     "decorators": []
                 }
             ],
@@ -226,11 +235,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [CommonModule],\n  styleUrls: ['./button.scss'],\n  template: `<button class=\"button\" [ngClass]=\"type\">\n  <ng-container [ngSwitch]=\"type\">\n    <ng-container *ngSwitchCase=\"'add'\">\n      <span>{{ label }}</span>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"21\" height=\"21\" viewBox=\"0 0 21 21\" fill=\"none\">\n        <circle cx=\"10.4993\" cy=\"10.4163\" r=\"8.33333\" stroke=\"white\" stroke-width=\"1.5\" />\n        <path d=\"M13 10.4165L10.5 10.4165M10.5 10.4165L8 10.4165M10.5 10.4165L10.5 7.9165M10.5 10.4165L10.5 12.9165\"\n          stroke=\"white\" stroke-width=\"1.5\" stroke-linecap=\"round\" />\n      </svg>\n    </ng-container>\n\n    <ng-container *ngSwitchDefault>\n      <span>{{ label }}</span>\n    </ng-container>\n  </ng-container>\n</button>`,\n})\nexport class ButtonComponent {\n  @Input() label: string = '';\n  @Input() type: 'cancel' | 'update' | 'add' = 'update';\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [CommonModule],\n  styleUrls: ['./button.scss'],\n  template: `<button class=\"button\" [ngClass]=\"[type, size]\">\n  <ng-container [ngSwitch]=\"type\">\n    <ng-container *ngSwitchCase=\"'withIcon'\">\n      <span>{{ label }}</span>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"21\" height=\"21\" viewBox=\"0 0 21 21\" fill=\"none\">\n        <circle cx=\"10.4993\" cy=\"10.4163\" r=\"8.33333\" stroke=\"white\" stroke-width=\"1.5\" />\n        <path d=\"M13 10.4165L10.5 10.4165M10.5 10.4165L8 10.4165M10.5 10.4165L10.5 7.9165M10.5 10.4165L10.5 12.9165\"\n          stroke=\"white\" stroke-width=\"1.5\" stroke-linecap=\"round\" />\n      </svg>\n    </ng-container>\n\n    <ng-container *ngSwitchDefault>\n      <span>{{ label }}</span>\n    </ng-container>\n  </ng-container>\n</button>`,\n})\nexport class ButtonComponent {\n  @Input() label: string = '';\n  @Input() type: 'light' | 'solid' | 'withIcon' = 'solid';\n  @Input() size: 'small' | 'medium' | 'large' = 'medium';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".button {\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  flex-shrink: 0;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: all 0.2s ease;\n\n  /* Base font (for cancel & update) */\n  font-family: Roboto, sans-serif;\n  font-size: 14px;\n  font-style: normal;\n  font-weight: 400;\n  line-height: 20px; /* 142.857% */\n\n  /* Cancel button */\n  &.cancel {\n    height: 40px;\n    padding: 0 16px;\n    border: 2px solid var(--colors-base-primary, #0554EF);\n    color: var(--colors-base-primary, #0554EF);\n    background: transparent;\n  }\n\n  /* Update button */\n  &.update {\n    height: 40px;\n    padding: 0 16px;\n    background: var(--colors-base-primary, #0554EF);\n    color: #fff;\n    border: none;\n  }\n\n  /* Add New button */\n  &.add {\n    height: 32px;\n    padding: 0 12px;\n    background: var(--colors-base-primary, #0554EF);\n    color: #fff;\n    border: none;\n\n    /* Smaller font metrics for Add New */\n    font-family: Roboto, sans-serif;\n    font-size: 12px;\n    font-style: normal;\n    font-weight: 400;\n    line-height: 16px; /* 133.333% */\n\n    svg {\n      width: 20px;\n      height: 20px;\n      flex-shrink: 0;\n    }\n  }\n\n  &:hover {\n    opacity: 0.9;\n  }\n}",
+                    "data": ".button {\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  flex-shrink: 0;\n  cursor: pointer;\n  border-radius: 12px;\n  transition: all 0.2s ease;\n\n  /* Base font */\n  font-family: Roboto, sans-serif;\n  font-style: normal;\n  font-weight: 400;\n\n  &.small {\n    height: 32px;\n    padding: 0 12px;\n    font-size: 12px;\n    line-height: 16px;\n  }\n\n  &.medium {\n    height: 40px;\n    padding: 0 16px;\n    font-size: 14px;\n    line-height: 20px;\n  }\n\n  &.large {\n    height: 48px;\n    padding: 0 20px;\n    font-size: 16px;\n    line-height: 24px;\n  }\n\n  /* Light button */\n  &.light {\n    border: 2px solid var(--colors-base-primary, #0554EF);\n    color: var(--colors-base-primary, #0554EF);\n    background: transparent;\n  }\n\n  /* Solid button */\n  &.solid {\n    background: var(--colors-base-primary, #0554EF);\n    color: #fff;\n    border: none;\n  }\n\n  /* With icon button */\n  &.withIcon {\n    background: var(--colors-base-primary, #0554EF);\n    color: #fff;\n    border: none;\n  }\n\n  &.withIcon svg {\n    width: 20px;\n    height: 20px;\n    flex-shrink: 0;\n  }\n\n  &:hover {\n    opacity: 0.9;\n  }\n}\n",
                     "styleUrl": "./button.scss"
                 }
             ],
@@ -1576,7 +1585,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

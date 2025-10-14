@@ -6,26 +6,49 @@ const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
   tags: ['autodocs'],
   argTypes: {
-    type: {
-      control: 'select',
-      options: ['cancel', 'update', 'add'],
-      description: 'Button type variant',
+    appearance: {
+      table: { disable: true },
     },
     label: { control: 'text', description: 'Button label text' },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+      description: 'Button size',
+    },
+    variant: {
+      control: 'select',
+      options: ['solid', 'bordered', 'transparent', 'solid-medium', 'solid-light', 'bordered-light'],
+      description: 'Visual variant style',
+    },
+  },
+  args: {
+    label: 'Button',
+    size: 'medium',
+    variant: 'solid',
+    appearance: 'primary',
   },
 };
 export default meta;
 
 type Story = StoryObj<ButtonComponent>;
 
-export const Cancel: Story = {
-  args: { label: 'Cancel', type: 'cancel' },
+export const Primary: Story = {
+  name: 'Primary',
+  args: {
+    appearance: 'primary',
+  },
 };
 
-export const Update: Story = {
-  args: { label: 'Update', type: 'update' },
+export const Light: Story = {
+  name: 'Light',
+  args: {
+    appearance: 'light',
+  },
 };
 
-export const AddNew: Story = {
-  args: { label: 'Add New', type: 'add' },
+export const Dark: Story = {
+  name: 'Dark',
+  args: {
+    appearance: 'dark',
+  },
 };
