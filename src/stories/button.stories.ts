@@ -37,6 +37,16 @@ export const Primary: Story = {
   args: {
     appearance: 'primary',
   },
+  parameters: {
+    backgrounds: {
+      default: 'black',
+      values: [
+        { name: 'blue', value: '#0554EF' },
+        { name: 'white', value: '#ffffff' },
+        { name: 'gray', value: '#808080' },
+      ],
+    },
+  },
 };
 
 export const Light: Story = {

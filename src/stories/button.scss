@@ -80,7 +80,8 @@
     color: var(--colors-base-default-foreground, #000);
 
     &.bordered {
-      border: 2px solid var(--colors-base-default, #FFF);
+    background: none;
+    border: 2px solid var(--colors-base-default, #FFF);
     }
 
     &.transparent {
@@ -97,7 +98,8 @@
     }
 
     &.bordered-light {
-      border: 1.5px solid var(--colors-base-primary, #0554EF);
+      background: none;
+      border: 1.5px solid var(--colors-base-default, #FFF);
     }
   }
 
@@ -106,6 +108,7 @@
     color: var(--colors-base-primary-foreground, #FFF);
 
     &.bordered {
+    background: none;
       border: 2px solid var(--colors-common-black, #000);
     }
 
@@ -123,6 +126,7 @@
     }
 
     &.bordered-light {
+      background: none;
       border: 1.5px solid var(--colors-common-black, #000);
     }
   }
