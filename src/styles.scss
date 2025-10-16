@@ -48,27 +48,26 @@ body {
 }
 
 /* Shared typography helpers */
-.large-text {
+.text-large {
   font-size: 1.5rem;
   line-height: 2.25rem;
 }
 
-.medium-text {
+.text-medium {
   font-size: 0.95rem;
   line-height: 1.425rem;
 }
 
-.base-text {
+.text-base {
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
-.body-text {
+.text-body {
   font-size: 0.9rem;
   line-height: 1.35rem;
 }
 
-.small-text,
 .text-small {
   font-size: 0.875rem;
   line-height: 1.3125rem;
@@ -80,12 +79,12 @@ body {
   font-weight: 700;
 }
 
-.caption-text {
+.text-caption {
   font-size: 0.85rem;
   line-height: 1.275rem;
 }
 
-.menu-text {
+.text-menu {
   font-size: 0.875rem;
   line-height: normal;
 }
