@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, Output, EventEmitter } from '@angular/core';
+import { Component, HostBinding, HostListener, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -33,14 +33,31 @@ import { CommonModule } from '@angular/common';
 </svg>
       <span class="ask-label menu-text" [class.visible]="expanded">Dashboard</span>
     </div>
-    <div class="menu-item">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <div class="menu-item has-submenu" [class.open]="activeSubmenu === 'reports'">
+      <button type="button" class="menu-main" (click)="toggleSubmenu('reports', $event)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="white" stroke-width="1.5"/>
   <path d="M7 18L7 15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
   <path d="M12 18V12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
   <path d="M17 18V9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
-      <span class="ask-label menu-text" [class.visible]="expanded">Reports</span>
+        <span class="ask-label menu-text" [class.visible]="expanded">Reports</span>
+      </button>
+      <div
+        class="submenu"
+        *ngIf="activeSubmenu === 'reports'"
+        [style.top.px]="submenuPosition.top"
+        [style.left.px]="submenuPosition.left"
+        (click)="$event.stopPropagation()"
+      >
+        <button
+          type="button"
+          class="submenu-item"
+          *ngFor="let item of reportsSubmenu"
+        >
+          {{ item }}
+        </button>
+      </div>
     </div>
     <div class="menu-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -86,6 +103,20 @@ import { CommonModule } from '@angular/common';
 export class SidebarComponent {
   @Input() expanded = false;
   @Output() expandedChange = new EventEmitter<boolean>();
+  readonly reportsSubmenu = [
+    'Financial',
+    'Receivables',
+    'Liabilities',
+    'Sales',
+    'Inventory',
+    'Rankings',
+    'Service',
+    'Parts',
+    'Settings',
+    'Others',
+  ];
+  activeSubmenu: 'reports' | null = null;
+  submenuPosition = { top: 0, left: 0 };
 
   @HostBinding('style.display') hostDisplay = 'block';
   @HostBinding('style.height') hostHeight = 'calc(100vh - var(--header-height, 64px))';
@@ -101,5 +132,32 @@ export class SidebarComponent {
   toggleSidebar() {
     this.expanded = !this.expanded;
     this.expandedChange.emit(this.expanded);
+    this.activeSubmenu = null;
+  }
+
+  toggleSubmenu(key: 'reports', event: MouseEvent) {
+    event.stopPropagation();
+    if (this.activeSubmenu === key) {
+      this.activeSubmenu = null;
+      return;
+    }
+
+    const trigger = event.currentTarget as HTMLElement | null;
+    if (trigger) {
+      const rect = trigger.getBoundingClientRect();
+      const horizontalOffset = 25;
+      const verticalOffset = 15;
+      this.submenuPosition = {
+        top: Math.max(0, rect.top - verticalOffset),
+        left: rect.right + horizontalOffset,
+      };
+    }
+
+    this.activeSubmenu = key;
+  }
+
+  @HostListener('document:click')
+  closeSubmenu() {
+    this.activeSubmenu = null;
   }
 }

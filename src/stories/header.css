@@ -284,7 +284,7 @@ aspect-ratio: 17/4;
   font-style: normal;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .storybook-header {
     align-items: center;
     flex-wrap: nowrap;
@@ -335,7 +335,7 @@ aspect-ratio: 17/4;
 
 
 /* Tablet responsiveness */
-@media (max-width: 1024px) {
+@media (max-width: 1150px) and (min-width: 1000px) {
   .storybook-header {
     height: var(--header-height);
     min-height: var(--header-height);
@@ -352,7 +352,7 @@ aspect-ratio: 17/4;
   }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 1000px) {
   .storybook-header {
     flex-wrap: nowrap;
     align-items: center;

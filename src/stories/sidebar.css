@@ -158,6 +158,81 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+.menu-item.has-submenu {
+  position: relative;
+  display: block;
+  padding: 0;
+}
+
+.menu-item.has-submenu:hover {
+  background: none;
+}
+
+.menu-item.has-submenu .menu-main {
+  display: flex;
+  align-items: center;
+  gap: var(--units-unit-6, 24px);
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.menu-item.has-submenu .menu-main:hover,
+.menu-item.has-submenu.open .menu-main {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item.has-submenu .menu-main:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 2px;
+}
+
+.submenu {
+  position: fixed;
+  display: flex;
+  width: 190px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--units-unit-2, 8px);
+  border-radius: var(--layout-radius-rounded-medium, 12px);
+  background: var(--colors-base-default-foreground, #000);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+}
+
+.submenu-item {
+  display: flex;
+  width: 100%;
+  padding: var(--units-unit-2, 8px) 12px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  text-align: left;
+  color: var(--colors-base-primary-foreground, #FFF);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.submenu-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.submenu-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 2px;
+}
+
 /* SVG Icon Resize (Collapsed vs Expanded) */
 .menu-item svg {
   width: 24px;
