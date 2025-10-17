@@ -8,9 +8,9 @@
   column-gap: 0;
   height: var(--header-height);
   min-height: var(--header-height);
-  padding: var(--units-unit-1, 4px) var(--units-unit-8, 32px);
   margin: 0;
   background: var(--colors-layout-background---white, #FFF);
+  padding: var(--units-unit-1, 4px) var(--units-unit-8, 32px);
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -340,6 +340,7 @@ aspect-ratio: 17/4;
     height: var(--header-height);
     min-height: var(--header-height);
     gap: var(--units-unit-6, 24px);
+    padding: var(--units-unit-1, 4px) var(--units-unit-3, 12px);
   }
 
   .left-box {
