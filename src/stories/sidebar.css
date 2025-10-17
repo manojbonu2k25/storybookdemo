@@ -271,7 +271,6 @@
 .toggle-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   width: 33px;
   height: 33px;
   background: none;
@@ -285,8 +284,8 @@
 }
 
 .toggle-btn svg {
-  width: 32px;
-  height: 32px;
+  width: 27.5px;
+  height: 27.5px;
 }
 
 .toggle-btn:hover {
