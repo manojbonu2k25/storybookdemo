@@ -56,9 +56,10 @@
       background-color: var(--colors-base-primary, #0554EF);
       color: var(--colors-base-primary-foreground, #FFF);
 
-      &:hover {
-        background-color: var(--colors-base-primary-600, #0444BD);
-      }
+    }
+
+    &.solid:hover {
+      background: var(--colors-base-primary-600, #0444BD);
     }
 
     &.bordered {
@@ -66,39 +67,43 @@
       background-color: transparent;
       border: 2px solid var(--colors-base-primary, #0554EF);
 
-      &:hover {
-        color: var(--colors-base-primary-600, #0444BD);
-        border-color: var(--colors-base-primary-600, #0444BD);
-        background-color: transparent;
-      }
+    }
+
+    &.bordered:hover {
+      color: var(--colors-base-primary-600, #0444BD);
+      border: 2px solid var(--colors-base-primary-600, #0444BD);
+      background: transparent;
     }
 
     &.transparent {
       background-color: transparent;
       color: var(--colors-base-primary, #0554EF);
 
-      &:hover {
-        color: var(--colors-base-primary-600, #0444BD);
-        background-color: var(--colors-base-primary-75, #E9EFFF);
-      }
+    }
+
+    &.transparent:hover {
+      color: var(--colors-base-primary-600, #0444BD);
+      background: rgba(249, 251, 255, 0.75);
     }
 
     &.solid-medium {
       background-color: var(--colors-base-primary-100, #D9E7FF);
       color: var(--colors-base-primary, #0554EF);
 
-      &:hover {
-        background-color: var(--colors-base-primary-200, #BBD3FF);
-      }
+    }
+
+    &.solid-medium:hover {
+      background: var(--colors-base-primary-150, #C6DBFF);
     }
 
     &.solid-light {
       background-color: var(--colors-base-primary-75, #E9EFFF);
       color: var(--colors-content-content1-foreground, #18181B);
 
-      &:hover {
-        background-color: var(--colors-base-primary-100, #D9E7FF);
-      }
+    }
+
+    &.solid-light:hover {
+      background: var(--colors-base-primary-100, #D9E7FF);
     }
 
     &.bordered-light {
@@ -106,11 +111,12 @@
       color: var(--colors-base-primary, #0554EF);
       border: 1.5px solid var(--colors-base-primary, #0554EF);
 
-      &:hover {
-        border-color: var(--colors-base-primary-600, #0444BD);
-        color: var(--colors-base-primary-600, #0444BD);
-        background-color: transparent;
-      }
+    }
+
+    &.bordered-light:hover {
+      border: 1.5px solid var(--colors-base-primary-600, #0444BD);
+      color: var(--colors-base-primary-600, #0444BD);
+      background: transparent;
     }
   }
 
