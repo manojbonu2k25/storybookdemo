@@ -38,7 +38,7 @@ import type { User } from './user';
       </div>
 
       <div class="user-info text-small">
-        <div class="welcome text-small-bold">Welcome</div>
+        <div class="text-small-bold">Welcome</div>
         <div class="username-row" [class.open]="isDropdownOpen">
           <span class="text-small">Manoj Kumar</span>
           <button
