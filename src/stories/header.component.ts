@@ -25,7 +25,7 @@ import type { User } from './user';
       <img src="assets/Western.svg" alt="Western Logo" />
     </div>
     <div class="divider"></div>
-    <h1 class="text-large">DASHBOARD</h1>
+    <h1 class="report-title text-large">DASHBOARD</h1>
   </div>
 
   <!-- Right Section -->
