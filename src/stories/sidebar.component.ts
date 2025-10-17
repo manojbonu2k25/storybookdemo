@@ -19,22 +19,29 @@ import { CommonModule } from '@angular/common';
   </div>
 
     <!-- Menu -->
-    <nav class="menu">
-    <div class="menu-item">
+    <nav class="menu" id="sidebar-navigation" aria-label="Sidebar">
+    <button type="button" class="menu-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z" stroke="white" stroke-width="1.5"/>
 </svg>
       <span class="ask-label text-small" [class.visible]="expanded">Favorites</span>
-    </div>
-    <div class="menu-item">
+    </button>
+    <button type="button" class="menu-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M2.36395 12.9581C1.98451 10.321 1.79478 9.0025 2.33524 7.87516C2.87571 6.74782 4.02607 6.06255 6.32679 4.69202L7.71163 3.86708C9.80092 2.6225 10.8456 2.00021 11.9999 2.00021C13.1542 2.00021 14.1988 2.6225 16.2881 3.86708L17.673 4.69202C19.9737 6.06255 21.1241 6.74782 21.6645 7.87516C22.205 9.0025 22.0153 10.321 21.6358 12.9581L21.357 14.8954C20.8696 18.2829 20.6259 19.9766 19.4509 20.9884C18.2758 22.0002 16.5525 22.0002 13.106 22.0002H10.8938C7.44725 22.0002 5.72397 22.0002 4.54891 20.9884C3.37384 19.9766 3.13013 18.2829 2.64272 14.8954L2.36395 12.9581Z" stroke="white" stroke-width="1.5"/>
   <path d="M15 18H9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
       <span class="ask-label text-small" [class.visible]="expanded">Dashboard</span>
-    </div>
+    </button>
     <div class="menu-item has-submenu" [class.open]="activeSubmenu === 'reports'">
-      <button type="button" class="menu-main" (click)="toggleSubmenu('reports', $event)">
+      <button
+        type="button"
+        class="menu-main"
+        (click)="toggleSubmenu('reports', $event)"
+        aria-haspopup="true"
+        [attr.aria-controls]="activeSubmenu === 'reports' ? 'reports-submenu' : null"
+        [attr.aria-expanded]="activeSubmenu === 'reports'"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="white" stroke-width="1.5"/>
   <path d="M7 18L7 15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
@@ -48,6 +55,7 @@ import { CommonModule } from '@angular/common';
         *ngIf="activeSubmenu === 'reports'"
         [style.top.px]="submenuPosition.top"
         [style.left.px]="submenuPosition.left"
+        id="reports-submenu"
         (click)="$event.stopPropagation()"
       >
         <button
@@ -59,35 +67,42 @@ import { CommonModule } from '@angular/common';
         </button>
       </div>
     </div>
-    <div class="menu-item">
+    <button type="button" class="menu-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <circle cx="12" cy="6" r="4" stroke="white" stroke-width="1.5"/>
   <path d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z" stroke="white" stroke-width="1.5"/>
 </svg>
       <span class="ask-label text-small" [class.visible]="expanded">Customers</span>
-    </div>
-    <div class="menu-item">
+    </button>
+    <button type="button" class="menu-item">
      <svg xmlns="http://www.w3.org/2000/svg" width="27.005" height="27.005" viewBox="0 0 30 30" fill="none">
   <path d="M22.922 15.24C24.2223 14.9836 25.4678 14.3425 26.4751 13.3352C28.2517 11.5586 28.8561 9.0494 28.3067 6.77829L24.8451 10.2399L20.7241 9.2875L19.845 5.2398L23.3615 1.72325C21.0538 1.10053 18.4713 1.70494 16.6581 3.51816C14.7167 5.45959 14.1672 8.28015 15.0097 10.7161L2.39043 23.3354C1.19993 24.5259 1.19993 26.4307 2.39043 27.6212C3.58093 28.8117 5.48573 28.8117 6.67623 27.6212L9.95468 24.2145" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M17.7754 29.1779C22.0137 29.1779 25.4494 25.7421 25.4494 21.5038C25.4494 17.2656 22.0137 13.8298 17.7754 13.8298C13.5371 13.8298 10.1013 17.2656 10.1013 21.5038C10.1013 25.7421 13.5371 29.1779 17.7754 29.1779Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M14.6799 21.339L17.5005 23.8665L21.42 19.3793" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
       <span class="ask-label text-small" [class.visible]="expanded">Utilities</span>
-    </div>
-    <div class="menu-item">
+    </button>
+    <button type="button" class="menu-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
         <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5"/>
         <path d="M12 16.5V16.6" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
         <path d="M9.75 9.5C9.75 8.11875 10.8687 7 12.25 7C13.6313 7 14.75 8.11875 14.75 9.5C14.75 10.4562 14.2188 11.2875 13.4563 11.75C12.7688 12.1688 12.25 12.75 12.25 13.5V14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <span class="ask-label text-small" [class.visible]="expanded">Help</span>
-    </div>
+    </button>
   
     </nav>
   </div>
 
   <!-- Toggle -->
-  <button class="toggle-btn" (click)="toggleSidebar()">
+  <button
+    type="button"
+    class="toggle-btn"
+    (click)="toggleSidebar()"
+    [attr.aria-expanded]="expanded"
+    [attr.aria-label]="expanded ? 'Collapse sidebar' : 'Expand sidebar'"
+    aria-controls="sidebar-navigation"
+  >
     <svg *ngIf="!expanded" xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
   <path d="M14.4375 12.375L18.5625 16.5L14.4375 20.625" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M2.75 16.5C2.75 10.0182 2.75 6.77728 4.76364 4.76364C6.77728 2.75 10.0182 2.75 16.5 2.75C22.9818 2.75 26.2227 2.75 28.2364 4.76364C30.25 6.77728 30.25 10.0182 30.25 16.5C30.25 22.9818 30.25 26.2227 28.2364 28.2364C26.2227 30.25 22.9818 30.25 16.5 30.25C10.0182 30.25 6.77728 30.25 4.76364 28.2364C2.75 26.2227 2.75 22.9818 2.75 16.5Z" stroke="white" stroke-width="1.5"/>
