@@ -269,15 +269,31 @@
    Toggle Button
 =========================== */
 .toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   margin-top: auto;
+  line-height: 0;
+  align-self: flex-end;
+}
+
+.toggle-btn svg {
+  width: 32px;
+  height: 32px;
 }
 
 .toggle-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.toggle-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
