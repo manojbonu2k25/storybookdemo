@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   <path d="M10.6807 0.823869C11.2191 0.955672 12.5432 1.33134 13.0692 1.51408C15.8288 2.47109 18.3251 3.91264 17.961 7.30004C17.8656 8.187 17.559 9.0555 17.052 9.78455C17.4422 10.3621 17.7256 11.0115 17.8668 11.6979C18.3548 14.0755 17.4897 15.7851 15.4795 16.9923C14.2675 17.7201 12.8848 18.1187 11.5488 18.5523C11.5802 19.1725 11.7154 19.8156 11.9248 20.3988C12.4442 21.8423 13.3917 22.7999 14.886 23.1711C14.886 23.1711 15.3449 23.2985 15.4635 23.7703C15.5821 24.2421 15.6894 24.6515 15.6894 24.6515C15.6894 24.6515 15.8744 25.3589 15.1676 25.2424C15.1676 25.2424 13.6159 24.9979 12.6565 24.3453C9.34658 22.2797 8.80521 16.8019 10.5989 13.5769C11.5038 11.9501 12.9743 10.9141 14.4021 9.79792C14.4086 9.77246 14.3843 9.76927 14.3731 9.75781C14.2693 9.65275 14.0843 9.52286 13.9627 9.42607C13.2856 8.88677 12.5776 8.38057 11.9597 7.76867C10.5111 6.33412 9.71955 4.07692 9.57961 1.61978C9.57961 1.61978 9.53099 1.16579 9.73259 0.953125C9.95377 0.720082 10.1388 0.690793 10.6813 0.823232L10.6807 0.823869ZM15.6906 8.31498C15.8359 7.9998 15.9557 7.67507 16.0126 7.32996C16.2249 6.04313 15.8845 5.23258 14.8463 4.49206C13.9029 3.8184 12.7217 3.46757 11.6324 3.111C11.7819 4.07437 12.1554 4.97279 12.7507 5.73878C13.4154 6.59391 14.309 7.2179 15.1481 7.88264C15.3088 8.00999 15.486 8.18509 15.6473 8.29843C15.6622 8.30862 15.6645 8.32262 15.6906 8.31562V8.31498ZM15.6906 11.2643C15.6639 11.2567 15.6622 11.272 15.6479 11.2815C15.5204 11.3681 15.3781 11.5101 15.2518 11.6107C14.1697 12.469 13.0253 13.249 12.3179 14.4798C11.9669 15.0904 11.7427 15.7724 11.633 16.4689C12.6624 16.1321 13.7404 15.8023 14.6577 15.2095C15.7997 14.4722 16.2421 13.6387 16.0126 12.2493C15.9557 11.9049 15.8383 11.5776 15.6906 11.2643Z" fill="white"/>
 </svg>
      </div>
-    <span class="ask-label text-base" [class.visible]="expanded">Ask AXEL</span>
+    <span class="ask-label text-medium" [class.visible]="expanded">Ask AXEL</span>
   </div>
 
     <!-- Menu -->
@@ -24,14 +24,14 @@ import { CommonModule } from '@angular/common';
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z" stroke="white" stroke-width="1.5"/>
 </svg>
-      <span class="ask-label text-menu" [class.visible]="expanded">Favorites</span>
+      <span class="ask-label text-small" [class.visible]="expanded">Favorites</span>
     </div>
     <div class="menu-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M2.36395 12.9581C1.98451 10.321 1.79478 9.0025 2.33524 7.87516C2.87571 6.74782 4.02607 6.06255 6.32679 4.69202L7.71163 3.86708C9.80092 2.6225 10.8456 2.00021 11.9999 2.00021C13.1542 2.00021 14.1988 2.6225 16.2881 3.86708L17.673 4.69202C19.9737 6.06255 21.1241 6.74782 21.6645 7.87516C22.205 9.0025 22.0153 10.321 21.6358 12.9581L21.357 14.8954C20.8696 18.2829 20.6259 19.9766 19.4509 20.9884C18.2758 22.0002 16.5525 22.0002 13.106 22.0002H10.8938C7.44725 22.0002 5.72397 22.0002 4.54891 20.9884C3.37384 19.9766 3.13013 18.2829 2.64272 14.8954L2.36395 12.9581Z" stroke="white" stroke-width="1.5"/>
   <path d="M15 18H9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
-      <span class="ask-label text-menu" [class.visible]="expanded">Dashboard</span>
+      <span class="ask-label text-small" [class.visible]="expanded">Dashboard</span>
     </div>
     <div class="menu-item has-submenu" [class.open]="activeSubmenu === 'reports'">
       <button type="button" class="menu-main" (click)="toggleSubmenu('reports', $event)">
@@ -41,7 +41,7 @@ import { CommonModule } from '@angular/common';
   <path d="M12 18V12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
   <path d="M17 18V9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
-        <span class="ask-label text-menu" [class.visible]="expanded">Reports</span>
+        <span class="ask-label text-small" [class.visible]="expanded">Reports</span>
       </button>
       <div
         class="submenu"
@@ -52,7 +52,7 @@ import { CommonModule } from '@angular/common';
       >
         <button
           type="button"
-          class="submenu-item text-menu"
+          class="submenu-item text-small"
           *ngFor="let item of reportsSubmenu"
         >
           {{ item }}
@@ -64,7 +64,7 @@ import { CommonModule } from '@angular/common';
   <circle cx="12" cy="6" r="4" stroke="white" stroke-width="1.5"/>
   <path d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z" stroke="white" stroke-width="1.5"/>
 </svg>
-      <span class="ask-label text-menu" [class.visible]="expanded">Customers</span>
+      <span class="ask-label text-small" [class.visible]="expanded">Customers</span>
     </div>
     <div class="menu-item">
      <svg xmlns="http://www.w3.org/2000/svg" width="27.005" height="27.005" viewBox="0 0 30 30" fill="none">
@@ -72,7 +72,7 @@ import { CommonModule } from '@angular/common';
   <path d="M17.7754 29.1779C22.0137 29.1779 25.4494 25.7421 25.4494 21.5038C25.4494 17.2656 22.0137 13.8298 17.7754 13.8298C13.5371 13.8298 10.1013 17.2656 10.1013 21.5038C10.1013 25.7421 13.5371 29.1779 17.7754 29.1779Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M14.6799 21.339L17.5005 23.8665L21.42 19.3793" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-      <span class="ask-label text-menu" [class.visible]="expanded">Utilities</span>
+      <span class="ask-label text-small" [class.visible]="expanded">Utilities</span>
     </div>
     <div class="menu-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -80,7 +80,7 @@ import { CommonModule } from '@angular/common';
         <path d="M12 16.5V16.6" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
         <path d="M9.75 9.5C9.75 8.11875 10.8687 7 12.25 7C13.6313 7 14.75 8.11875 14.75 9.5C14.75 10.4562 14.2188 11.2875 13.4563 11.75C12.7688 12.1688 12.25 12.75 12.25 13.5V14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span class="ask-label text-menu" [class.visible]="expanded">Help</span>
+      <span class="ask-label text-small" [class.visible]="expanded">Help</span>
     </div>
   
     </nav>

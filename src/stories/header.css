@@ -398,7 +398,7 @@ aspect-ratio: 17/4;
   }
 
   .user-info .welcome,
-  .user-info .username-row .text-small {
+  .user-info .username-row > span.text-small {
     display: none;
   }
 

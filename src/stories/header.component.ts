@@ -62,18 +62,18 @@ import type { User } from './user';
             </div>
             <div class="dropdown-divider mobile-only"></div>
             <div class="dropdown-header">
-              <div class="email text-medium">manoj.bonu@axelautomotive.com</div>
-              <div class="role text-caption">Super Admin</div>
+              <div class="email text-small">manoj.bonu@axelautomotive.com</div>
+              <div class="role text-small">Super Admin</div>
             </div>
 
             <div class="dropdown-divider"></div>
 
-            <div class="dropdown-item text-body">Edit Profile</div>
-            <div class="dropdown-item text-body">Edit Widgets</div>
+            <div class="dropdown-item text-small">Edit Profile</div>
+            <div class="dropdown-item text-small">Edit Widgets</div>
 
             <div class="dropdown-footer">
-              <a href="#" class="text-body">Sign Out</a>
-              <a href="#" class="text-body">Privacy Policy</a>
+              <a href="#" class="text-small">Sign Out</a>
+              <a href="#" class="text-small">Privacy Policy</a>
             </div>
           </div>
         </div>
