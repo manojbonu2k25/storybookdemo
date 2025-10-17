@@ -25,7 +25,7 @@ import type { User } from './user';
       <img src="assets/Western.svg" alt="Western Logo" />
     </div>
     <div class="divider"></div>
-    <h1 class="report-title text-large">DASHBOARD</h1>
+    <h1 class="header-title text-large">DASHBOARD</h1>
   </div>
 
   <!-- Right Section -->
@@ -38,7 +38,7 @@ import type { User } from './user';
       </div>
 
       <div class="user-info text-small">
-        <div class="welcome text-small-bold">Welcome</div>
+        <div class="header-greeting text-small-bold">Welcome</div>
         <div class="username-row" [class.open]="isDropdownOpen">
           <span class="text-small">Manoj Kumar</span>
           <button

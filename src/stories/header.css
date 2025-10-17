@@ -373,7 +373,7 @@ h1 {
   }
 
   .divider,
-  .report-title,
+  .header-title,
   .rivicons,
   .axel-logo {
     display: none;
@@ -397,7 +397,7 @@ h1 {
     margin-right: 0;
   }
 
-  .user-info .welcome,
+  .user-info .header-greeting,
   .user-info .username-row > span.text-small {
     display: none;
   }

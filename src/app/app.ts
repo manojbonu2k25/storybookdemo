@@ -7,7 +7,7 @@ import { ChipComponent } from "../stories/chip.component";
 @Component({
   selector: 'app-root',
   standalone: true,   // 👈 this is required!
-  imports: [RouterOutlet, HeaderComponent, SidebarComponent, ChipComponent],
+  imports: [RouterOutlet, HeaderComponent, SidebarComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']  // 👈 use styleUrls (plural)
 })
