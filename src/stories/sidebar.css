@@ -271,6 +271,8 @@
 .toggle-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  transform: translateX(-2px); 
   width: 33px;
   height: 33px;
   background: none;
