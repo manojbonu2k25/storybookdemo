@@ -14,7 +14,16 @@ html, body {
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
+  color: var(--colors-content-content1-foreground, #18181B);
   -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
 }
 
 :root {
@@ -51,6 +60,7 @@ body {
 .text-large {
   font-size: 1.5rem;
   line-height: 2.25rem;
+  font-weight: 400;
 }
 
 .text-medium {
@@ -71,6 +81,7 @@ body {
 .text-small {
   font-size: 0.875rem;
   line-height: 1.3125rem;
+  font-weight: 400;
 }
 
 .text-small-bold {
@@ -86,5 +97,5 @@ body {
 
 .text-menu {
   font-size: 0.875rem;
-  line-height: normal;
+  line-height: 1.4286;
 }

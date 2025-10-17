@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
             stroke-linecap="round"/>
     </svg>
   </div>
-  <span>{{ label }}</span>
+  <span class="text-menu">{{ label }}</span>
 </div>`,
 })
 export class CheckboxComponent {

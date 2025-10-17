@@ -109,13 +109,6 @@
   max-width: 220px;
 }
 
-.logo-box .ask-label {
-  color: var(--colors-base-primary-foreground, #FFF);
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-}
-
 .logo-box .ask-label.visible {
   max-width: 160px;
 }
@@ -216,11 +209,6 @@
   background: none;
   text-align: left;
   color: var(--colors-base-primary-foreground, #FFF);
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
   cursor: pointer;
 }
 

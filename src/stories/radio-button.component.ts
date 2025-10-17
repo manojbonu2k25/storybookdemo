@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   <div class="outer">
     <div class="inner"></div>
   </div>
-  <span>{{ label }}</span>
+  <span class="text-base">{{ label }}</span>
 </div>`,
 })
 export class RadioButtonComponent {

@@ -78,11 +78,7 @@ aspect-ratio: 17/4;
 }
 
 .report-title {
-  color: var(--colors-content-content1-foreground, #18181B);
   text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 400;
 }
 
 .divider {
@@ -277,13 +273,6 @@ aspect-ratio: 17/4;
   flex-shrink: 0;
   aspect-ratio: 100 / 7;
 }
-.user-info {
-  color: var(--colors-content-content1-foreground, #18181B);
-  text-align: left;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-}
-
 @media (max-width: 1000px) {
   .storybook-header {
     align-items: center;
@@ -320,10 +309,6 @@ aspect-ratio: 17/4;
   align-items: center;
   gap: 0.5rem;
   position: relative;
-}
-
-.user-info .username-row .text-small {
-  font-weight: 400;   /* regular (not bold) */
 }
 
 .user-info .profile-trigger .desktop-arrow {

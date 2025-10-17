@@ -52,7 +52,7 @@ import { CommonModule } from '@angular/common';
       >
         <button
           type="button"
-          class="submenu-item"
+          class="submenu-item text-menu"
           *ngFor="let item of reportsSubmenu"
         >
           {{ item }}
